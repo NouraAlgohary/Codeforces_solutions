@@ -1,0 +1,22 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int a, b, c, d, p, q;
+	cin >> a >> b >> c >> d;
+	if (a*d<c*b)
+	{
+		p = c * b - a * d;
+		q = c * b;
+	}
+	else
+	{
+		p = a * d - b * c;
+		q = a * d;
+	}
+	int x = __gcd(p, q);
+	cout << p / x << "/" << q / x << endl;
+
+	return 0;
+}
