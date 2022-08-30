@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,in,j;
+	bool sn[100001] = { 0 };
+	cin >> n;
+	j = n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> in;
+		sn[in] = 1;
+		while (sn[j]&&j>0)
+		{
+			cout << j << " ";
+			j--;
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
