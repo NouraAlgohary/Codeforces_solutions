@@ -1,0 +1,21 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+using namespace std;
+int main()
+{
+	string s;
+	int c = 0, cnt = 0;
+	cin >> s;
+	for (int i = 0; i < s.size(); i++)
+	{
+		if (s[i] == '(')c++;
+		else if (s[i] == ')' && c > 0)
+		{
+			c--;
+			cnt++;
+		}
+	}
+	cout << cnt * 2 << endl;
+	return 0;
+}
