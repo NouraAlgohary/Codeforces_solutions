@@ -1,0 +1,33 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	string s;
+	cin >> s;
+	while (s != ".")
+	{
+		int a = 1;
+		int size = s.size();
+		string ss(size, s[0]);
+		if (s == ss) {
+			cout << size << endl;
+			cin >> s;
+			continue;
+		}
+		for (int i = 2; i <= s.size() / 2; i++)
+		{
+
+			if (s.size()%i==0&&s.substr(0,i) == s.substr(i,i)  && s.substr(0, i) == s.substr(s.size()-i))
+			{
+				a = s.size() / i;
+				cout << a << endl;
+				break;
+			}
+		}
+		if (a == 1)
+			cout << a << endl;
+		cin >> s;
+	}
+	return 0;
+}
