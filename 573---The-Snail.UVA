@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int h,  d, f;
+	double u;
+	cin >> h >> u >> d >> f;
+	while (h != 0)
+	{
+		double climb = 0, day = 1, up = u,slid;
+		slid =u*(f/100.00);
+		while (true)
+		{
+climb+=up;
+			if(up>0)
+			up = up - slid;
+			if (climb > h)
+			{
+				cout << "success on day " << day << endl;
+				break;
+			}
+			climb -= d;
+			if (climb < 0)
+			{
+				cout << "failure on day "<<day<<endl;
+				break;
+			}
+			day++;
+		}
+		cin >> h >> u >> d >> f;
+	}
+	return 0;
+}
