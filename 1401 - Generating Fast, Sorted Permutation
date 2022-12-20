@@ -1,0 +1,30 @@
+#include<iostream>
+#include<algorithm>
+#include<stdio.h>
+#include<string>
+#include<cstring>
+using namespace std;
+int main()
+{
+	int n;
+	char arr[10];
+	string s;
+	cin >> n;
+	while (n--)
+	{
+		cin >> s;
+		memset(arr, ' ', 10);
+		int si = s.size();
+		for (int i = 0; i < si; i++)
+			arr[i] = s[i];
+		sort(arr, arr + si);
+		do {
+			for (int j = 0; j < si; j++)
+				cout << arr[j];
+			cout << endl;
+		} while (next_permutation(arr, arr + si));
+		cout << endl;
+	}
+
+	return 0;
+}
