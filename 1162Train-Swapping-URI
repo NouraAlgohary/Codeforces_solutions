@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+	int n, l,num,cnt=0;
+	cin >> n;
+	while (n--)
+	{
+		cnt = 0;
+		vector<int>v;
+		cin >> l;
+		for(int i=0;i<l;i++)
+		{
+			cin >> num;
+			v.push_back(num);
+		}
+		for (int i = 0; i < l; i++)
+		{
+			for (int j = i + 1; j < l; j++)
+			{
+				if (v[i] > v[j]) {
+					//swap(v[i], v[j]);
+					cnt++;
+				}
+			}
+		}
+		cout <<"Optimal train swapping takes "<< cnt<<" swaps." << endl;
+	}
+	return 0;
+}
