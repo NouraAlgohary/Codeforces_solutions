@@ -1,0 +1,26 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int n, st,arr[1000],c=0,sorted[1000];
+	cin >> n;
+	while (n--)
+	{
+		c = 0;
+		cin >> st;
+		for (int i = 0; i < st; i++)
+		{
+			cin >> arr[i];
+			sorted[i] = arr[i];
+		}
+		sort(sorted, sorted + st);
+		for (int i = 0; i < st; i++)
+		{
+			if (sorted[st-i-1] == arr[i]) c++;
+		}
+		cout << c << endl;
+	}
+
+	return 0;
+}
